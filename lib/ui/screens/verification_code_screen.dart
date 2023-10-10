@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:nuntium_news_app/constants/color_constants.dart';
+import 'package:nuntium_news_app/constants/radius_constants.dart';
+import 'package:nuntium_news_app/constants/space_constants.dart';
+import 'package:nuntium_news_app/ui/components/nuntium_page_routes.dart';
+import 'package:nuntium_news_app/ui/components/nuntium_text_styles.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_body_skeleton.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_double_text.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_elevated_button.dart';
+import 'package:nuntium_news_app/ui/screens/create_new_password_screen.dart';
 import 'package:pinput/pinput.dart';
-
-import 'create_new_password_screen.dart';
-import '/constants/color_constants.dart';
-import '/constants/space_constants.dart';
-import '/constants/radius_constants.dart';
-import '../components/nuntium_page_routes.dart';
-import '../components/nuntium_text_styles.dart';
-import '../components/widgets/nuntium_double_text.dart';
-import '../components/widgets/nuntium_body_skeleton.dart';
-import '../components/widgets/nuntium_elevated_button.dart';
 
 class VerificationCodeScreen extends StatelessWidget {
   const VerificationCodeScreen({super.key});
 
-  final String titleText = "Verification Code ✅";
-  final String subtitleText =
+  static const _titleText = "Verification Code ✅";
+  static const _subtitleText =
       "You need to enter 4-digit code we send to your email adress.";
 
   @override
@@ -26,16 +25,16 @@ class VerificationCodeScreen extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(titleText, style: NuntiumTextStyles.semibold24),
+            Text(_titleText, style: NuntiumTextStyles.semibold24),
             const SizedBox(height: SpaceConstants.small),
-            Text(subtitleText, style: NuntiumTextStyles.regular16),
+            Text(_subtitleText, style: NuntiumTextStyles.regular16),
             const SizedBox(height: SpaceConstants.xLarge),
             const _VerificationPinput(),
             const SizedBox(height: SpaceConstants.medium),
             NuntiumElevatedButton(
               onPressed: () {
                 Navigator.of(context).push(
-                  NuntiumPageRoutes.defaultRoute(
+                  NuntiumPageRoutes.defaultRoute<void>(
                     const CreateNewPasswordScreen(),
                   ),
                 );

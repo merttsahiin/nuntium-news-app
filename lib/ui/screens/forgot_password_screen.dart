@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-
-import 'verification_code_screen.dart';
-import '/constants/space_constants.dart';
-import '/constants/nuntium_svg_icon_data.dart';
-import '/ui/screens/sign_in_screen.dart';
-import '/ui/components/widgets/nuntium_text_field.dart';
-import '/ui/components/widgets/nuntium_elevated_button.dart';
-import '../components/nuntium_page_routes.dart';
-import '../components/nuntium_text_styles.dart';
-import '../components/widgets/nuntium_double_text.dart';
-import '../components/widgets/nuntium_body_skeleton.dart';
+import 'package:nuntium_news_app/constants/nuntium_svg_icon_data.dart';
+import 'package:nuntium_news_app/constants/space_constants.dart';
+import 'package:nuntium_news_app/ui/components/nuntium_page_routes.dart';
+import 'package:nuntium_news_app/ui/components/nuntium_text_styles.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_body_skeleton.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_double_text.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_elevated_button.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_text_field.dart';
+import 'package:nuntium_news_app/ui/screens/sign_in_screen.dart';
+import 'package:nuntium_news_app/ui/screens/verification_code_screen.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
   const ForgotPasswordScreen({super.key});
@@ -46,7 +45,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             NuntiumElevatedButton(
               onPressed: () {
                 Navigator.of(context).push(
-                  NuntiumPageRoutes.defaultRoute(
+                  NuntiumPageRoutes.defaultRoute<void>(
                     const VerificationCodeScreen(),
                   ),
                 );

@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
-
-import 'sign_in_screen.dart';
-import '/constants/image_constants.dart';
-import '/constants/space_constants.dart';
-import '../components/nuntium_page_routes.dart';
-import '../components/nuntium_text_styles.dart';
-import '../components/widgets/nuntium_elevated_button.dart';
+import 'package:nuntium_news_app/constants/image_constants.dart';
+import 'package:nuntium_news_app/constants/space_constants.dart';
+import 'package:nuntium_news_app/ui/components/nuntium_page_routes.dart';
+import 'package:nuntium_news_app/ui/components/nuntium_text_styles.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_elevated_button.dart';
+import 'package:nuntium_news_app/ui/screens/sign_in_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: const [
+          children: [
             _WelcomeImage(),
             _WelcomeTitleAndSubtitle(),
             _GetStartedButton(),
@@ -44,8 +43,8 @@ class _WelcomeImage extends StatelessWidget {
 class _WelcomeTitleAndSubtitle extends StatelessWidget {
   const _WelcomeTitleAndSubtitle();
 
-  final String titleText = "Nuntium";
-  final String subtitleText =
+  static const _titleText = "Nuntium";
+  static const _subtitleText =
       "All news in one place, be the first to know last news";
 
   @override
@@ -53,13 +52,13 @@ class _WelcomeTitleAndSubtitle extends StatelessWidget {
     return Column(
       children: [
         Text(
-          titleText,
+          _titleText,
           textAlign: TextAlign.center,
           style: NuntiumTextStyles.semibold24,
         ),
         const SizedBox(height: SpaceConstants.defaultSpace),
         Text(
-          subtitleText,
+          _subtitleText,
           textAlign: TextAlign.center,
           style: NuntiumTextStyles.regular16,
         ),

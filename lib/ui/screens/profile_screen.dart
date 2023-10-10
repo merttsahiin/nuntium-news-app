@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-
-import 'language_screen.dart';
-import 'change_password_screen.dart';
-import 'terms_and_conditions_screen.dart';
-import '/core/datas.dart';
-import '/constants/space_constants.dart';
-import '/constants/color_constants.dart';
-import '/constants/nuntium_svg_icon_data.dart';
-import '/ui/components/nuntium_text_styles.dart';
-import '/ui/components/widgets/nuntium_svg_icon.dart';
-import '../components/nuntium_page_routes.dart';
-import '../components/widgets/nuntium_container.dart';
-import '../components/widgets/nuntium_adaptive_switch.dart';
+import 'package:nuntium_news_app/constants/color_constants.dart';
+import 'package:nuntium_news_app/constants/nuntium_svg_icon_data.dart';
+import 'package:nuntium_news_app/constants/space_constants.dart';
+import 'package:nuntium_news_app/core/datas.dart';
+import 'package:nuntium_news_app/ui/components/nuntium_page_routes.dart';
+import 'package:nuntium_news_app/ui/components/nuntium_text_styles.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_adaptive_switch.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_container.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_svg_icon.dart';
+import 'package:nuntium_news_app/ui/screens/change_password_screen.dart';
+import 'package:nuntium_news_app/ui/screens/language_screen.dart';
+import 'package:nuntium_news_app/ui/screens/terms_and_conditions_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -74,7 +73,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       "Language",
       onTap: () {
         Navigator.of(context).push(
-          NuntiumPageRoutes.defaultRoute(const LanguageScreen()),
+          NuntiumPageRoutes.defaultRoute<void>(const LanguageScreen()),
         );
       },
     );
@@ -85,7 +84,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       "Change Password",
       onTap: () {
         Navigator.of(context).push(
-          NuntiumPageRoutes.defaultRoute(const ChangePasswordScreen()),
+          NuntiumPageRoutes.defaultRoute<void>(const ChangePasswordScreen()),
         );
       },
     );
@@ -98,7 +97,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
       "Terms & Conditions",
       onTap: () {
         Navigator.of(context).push(
-          NuntiumPageRoutes.defaultRoute(const TermsAndConditionsScreen()),
+          NuntiumPageRoutes.defaultRoute<void>(
+            const TermsAndConditionsScreen(),
+          ),
         );
       },
     );

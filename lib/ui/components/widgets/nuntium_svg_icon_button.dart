@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-
-import '/ui/components/widgets/nuntium_svg_icon.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_svg_icon.dart';
 
 class NuntiumSvgIconButton extends StatelessWidget {
   const NuntiumSvgIconButton({
-    super.key,
     required this.onPressed,
     required this.iconPath,
+    super.key,
     this.iconColor,
   });
 

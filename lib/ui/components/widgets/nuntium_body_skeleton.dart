@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-
-import '/constants/space_constants.dart';
+import 'package:nuntium_news_app/constants/space_constants.dart';
 
 // Eğer sayfada TextField kullanılıyorsa ve Column: ManinAxisAlignment.spaceBetween kullanılıyorsa
 // Bu Widget ile birlikte kullanılmalıdır.
 class NuntiumBodySkeleton extends StatelessWidget {
   const NuntiumBodySkeleton({
-    super.key,
     required this.children,
+    super.key,
     this.mainAxisAlignment = MainAxisAlignment.spaceBetween,
   });
 
@@ -16,9 +15,10 @@ class NuntiumBodySkeleton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double deviceHeight = MediaQuery.of(context).size.height;
-    double statusBarHeight = MediaQuery.of(context).viewPadding.top;
-    double bodyHeight = deviceHeight - statusBarHeight;
+    //TODO: sizeOf
+    final deviceHeight = MediaQuery.of(context).size.height;
+    final statusBarHeight = MediaQuery.of(context).viewPadding.top;
+    final bodyHeight = deviceHeight - statusBarHeight;
 
     return Scaffold(
       body: SafeArea(

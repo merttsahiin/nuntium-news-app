@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '/core/models/article.dart';
+import 'package:nuntium_news_app/core/models/article.dart';
 
 class BookmarksProvider extends ChangeNotifier {
   List<Article> bookmarks = [];
@@ -10,7 +9,7 @@ class BookmarksProvider extends ChangeNotifier {
   }
 
   void addOrRemoveBookmark(Article article) {
-    final bool isExist = isOnList(article);
+    final isExist = isOnList(article);
 
     if (isExist) bookmarks.remove(article);
     if (!isExist) bookmarks.add(article);

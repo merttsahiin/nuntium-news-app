@@ -1,14 +1,13 @@
-import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-
-import 'welcome_screen.dart';
-import '/constants/space_constants.dart';
-import '/constants/color_constants.dart';
-import '/constants/image_constants.dart';
-import '/constants/radius_constants.dart';
-import '/ui/components/nuntium_text_styles.dart';
-import '../components/nuntium_page_routes.dart';
-import '../components/widgets/nuntium_elevated_button.dart';
+import 'package:flutter/material.dart';
+import 'package:nuntium_news_app/constants/color_constants.dart';
+import 'package:nuntium_news_app/constants/image_constants.dart';
+import 'package:nuntium_news_app/constants/radius_constants.dart';
+import 'package:nuntium_news_app/constants/space_constants.dart';
+import 'package:nuntium_news_app/ui/components/nuntium_page_routes.dart';
+import 'package:nuntium_news_app/ui/components/nuntium_text_styles.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_elevated_button.dart';
+import 'package:nuntium_news_app/ui/screens/welcome_screen.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -96,7 +95,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     return NuntiumElevatedButton(
       onPressed: () async {
         if (activePageIndex + 1 == items.length) {
-          Navigator.pushAndRemoveUntil<void>(
+          await Navigator.pushAndRemoveUntil<void>(
             context,
             NuntiumPageRoutes.defaultRoute(const WelcomeScreen()),
             (route) => false,
@@ -162,14 +161,15 @@ class _CarouselSliderIndicator extends StatelessWidget {
   }
 
   Widget buildItem(int index) {
-    bool isActive = index == activeIndex;
+    final isActive = index == activeIndex;
+    final color =
+        isActive ? ColorConstants.purplePrimary : ColorConstants.greyLighter;
+
     return Container(
       height: 8,
       width: isActive ? 24 : 8,
       decoration: BoxDecoration(
-        color: isActive
-            ? ColorConstants.purplePrimary
-            : ColorConstants.greyLighter,
+        color: color,
         borderRadius: const BorderRadius.all(
           RadiusConstants.circularSmall,
         ),
@@ -178,8 +178,8 @@ class _CarouselSliderIndicator extends StatelessWidget {
   }
 
   Widget buildSeperator(int index) {
-    return index != length - 1
-        ? const SizedBox(width: SpaceConstants.small)
-        : const SizedBox();
+    if (index == length - 1) return const SizedBox();
+
+    return const SizedBox(width: SpaceConstants.small);
   }
 }

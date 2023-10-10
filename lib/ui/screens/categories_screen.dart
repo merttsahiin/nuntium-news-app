@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-
-import '/constants/constants.dart';
-import '/constants/color_constants.dart';
-import '/constants/space_constants.dart';
-import '../components/nuntium_text_styles.dart';
-import '../components/widgets/nuntium_container.dart';
+import 'package:nuntium_news_app/constants/color_constants.dart';
+import 'package:nuntium_news_app/constants/constants.dart';
+import 'package:nuntium_news_app/constants/space_constants.dart';
+import 'package:nuntium_news_app/ui/components/nuntium_text_styles.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_container.dart';
 
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});
 
-  final String titleText = "Categories";
-  final String subtitleText = "Thousands of articles in each category";
+  static const titleText = "Categories";
+  static const subtitleText = "Thousands of articles in each category";
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +34,7 @@ class CategoriesScreen extends StatelessWidget {
                 childAspectRatio: 2.5,
               ),
               itemBuilder: (context, index) {
-                String topic = categories[index];
+                final topic = categories[index];
 
                 return NuntiumContainer(
                   color: ColorConstants.white,

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '/constants/color_constants.dart';
+import 'package:nuntium_news_app/constants/color_constants.dart';
 
 class NuntiumTextStyles {
   const NuntiumTextStyles._();

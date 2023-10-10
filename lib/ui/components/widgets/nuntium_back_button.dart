@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-
-import 'nuntium_svg_icon_button.dart';
-import '/constants/color_constants.dart';
-import '/constants/nuntium_svg_icon_data.dart';
+import 'package:nuntium_news_app/constants/color_constants.dart';
+import 'package:nuntium_news_app/constants/nuntium_svg_icon_data.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_svg_icon_button.dart';
 
 class NuntiumBackButton extends StatelessWidget {
   const NuntiumBackButton({
@@ -10,7 +9,7 @@ class NuntiumBackButton extends StatelessWidget {
     this.iconColor = ColorConstants.greyPrimary,
   });
 
-  final Color? iconColor;
+  final Color iconColor;
 
   @override
   Widget build(BuildContext context) {

@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-
-import '/constants/color_constants.dart';
-import '/constants/space_constants.dart';
-import '/constants/radius_constants.dart';
+import 'package:nuntium_news_app/constants/color_constants.dart';
+import 'package:nuntium_news_app/constants/radius_constants.dart';
+import 'package:nuntium_news_app/constants/space_constants.dart';
 
 class NuntiumElevatedButton extends StatelessWidget {
   const NuntiumElevatedButton({
-    super.key,
     required this.onPressed,
     required this.child,
+    super.key,
     this.padding,
     this.backgroundColor = ColorConstants.purplePrimary,
     this.foregroundColor = ColorConstants.white,
@@ -34,9 +33,7 @@ class NuntiumElevatedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: padding ??
-          const EdgeInsets.symmetric(
-            horizontal: SpaceConstants.defaultSpace,
-          ),
+          const EdgeInsets.symmetric(horizontal: SpaceConstants.defaultSpace),
       child: ElevatedButton(
         onPressed: onPressed,
         style: ButtonStyle(

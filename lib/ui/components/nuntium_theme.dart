@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-
-import '/core/extensions.dart';
-import '/constants/color_constants.dart';
-import '/ui/components/system_ui_manager.dart';
+import 'package:nuntium_news_app/constants/color_constants.dart';
+import 'package:nuntium_news_app/core/extensions.dart';
+import 'package:nuntium_news_app/ui/components/system_ui_manager.dart';
 
 class NuntiumTheme {
   const NuntiumTheme._();

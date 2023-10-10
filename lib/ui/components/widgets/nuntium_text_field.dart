@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-
-import '/constants/color_constants.dart';
-import '/constants/radius_constants.dart';
-import '/ui/components/nuntium_text_styles.dart';
-import '/ui/components/widgets/nuntium_svg_icon.dart';
+import 'package:nuntium_news_app/constants/color_constants.dart';
+import 'package:nuntium_news_app/constants/radius_constants.dart';
+import 'package:nuntium_news_app/ui/components/nuntium_text_styles.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_svg_icon.dart';
 
 class NuntiumTextField extends StatefulWidget {
   const NuntiumTextField({
-    super.key,
     required this.hintText,
     required this.prefixIconPath,
+    required this.controller,
+    super.key,
     this.isPrivate = false,
     this.suffixIcon,
-    required this.controller,
   });
 
   final String hintText;
@@ -37,8 +36,9 @@ class _NuntiumTextFieldState extends State<NuntiumTextField> {
   @override
   void dispose() {
     super.dispose();
-    _focus.removeListener(_onFocusChange);
-    _focus.dispose();
+    _focus
+      ..removeListener(_onFocusChange)
+      ..dispose();
   }
 
   void _onFocusChange() {
@@ -47,27 +47,27 @@ class _NuntiumTextFieldState extends State<NuntiumTextField> {
 
   @override
   Widget build(BuildContext context) {
-    BorderRadius borderRadius = const BorderRadius.all(
+    const borderRadius = BorderRadius.all(
       RadiusConstants.circularDefault,
     );
 
-    Widget prefixIcon = NuntiumSvgIcon(
+    final prefixIcon = NuntiumSvgIcon(
       widget.prefixIconPath,
       color: _focus.hasFocus || widget.controller.text.isNotEmpty
           ? ColorConstants.purplePrimary
           : ColorConstants.greyPrimary,
     );
 
-    TextStyle hintStyle = NuntiumTextStyles.medium16.copyWith(
+    final hintStyle = NuntiumTextStyles.medium16.copyWith(
       color: ColorConstants.greyPrimary,
     );
 
-    OutlineInputBorder border = OutlineInputBorder(
+    const border = OutlineInputBorder(
       borderSide: BorderSide.none,
       borderRadius: borderRadius,
     );
 
-    OutlineInputBorder enabledBorder = OutlineInputBorder(
+    final enabledBorder = OutlineInputBorder(
       borderRadius: borderRadius,
       borderSide: BorderSide(
         color: widget.controller.text.isNotEmpty
@@ -76,12 +76,12 @@ class _NuntiumTextFieldState extends State<NuntiumTextField> {
       ),
     );
 
-    OutlineInputBorder focusedBorder = OutlineInputBorder(
+    const focusedBorder = OutlineInputBorder(
       borderRadius: borderRadius,
-      borderSide: const BorderSide(color: ColorConstants.purplePrimary),
+      borderSide: BorderSide(color: ColorConstants.purplePrimary),
     );
 
-    InputDecoration textFieldDecoration = InputDecoration(
+    final textFieldDecoration = InputDecoration(
       prefixIcon: prefixIcon,
       suffixIcon: widget.suffixIcon,
       hintText: widget.hintText,
@@ -92,7 +92,7 @@ class _NuntiumTextFieldState extends State<NuntiumTextField> {
       focusedBorder: focusedBorder,
     );
 
-    TextField textField = TextField(
+    final textField = TextField(
       controller: widget.controller,
       focusNode: _focus,
       maxLines: 1,
@@ -103,7 +103,7 @@ class _NuntiumTextFieldState extends State<NuntiumTextField> {
       decoration: textFieldDecoration,
     );
 
-    BoxDecoration containerDecoration = BoxDecoration(
+    final containerDecoration = BoxDecoration(
       color: _focus.hasFocus || widget.controller.text.isNotEmpty
           ? ColorConstants.white
           : ColorConstants.greyLighter,

@@ -1,12 +1,6 @@
-import 'user.dart';
+import 'package:nuntium_news_app/core/models/user.dart';
 
 class Article {
-  final String title;
-  final String content;
-  final String category;
-  final String headerImage;
-  final User writer;
-
   Article({
     required this.title,
     required this.content,
@@ -14,4 +8,10 @@ class Article {
     required this.headerImage,
     required this.writer,
   });
+
+  final String title;
+  final String content;
+  final String category;
+  final String headerImage;
+  final User writer;
 }

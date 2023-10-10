@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
-
-import 'forgot_password_screen.dart';
-import '/constants/color_constants.dart';
-import '/constants/space_constants.dart';
-import '/constants/radius_constants.dart';
-import '/constants/nuntium_svg_icon_data.dart';
-import '/ui/screens/main_screen.dart';
-import '/ui/screens/sign_up_screen.dart';
-import '/ui/components/nuntium_text_styles.dart';
-import '/ui/components/widgets/nuntium_ink_well.dart';
-import '/ui/components/widgets/nuntium_svg_icon.dart';
-import '/ui/components/widgets/nuntium_text_field.dart';
-import '/ui/components/widgets/nuntium_double_text.dart';
-import '/ui/components/widgets/nuntium_elevated_button.dart';
-import '/ui/components/widgets/nuntium_body_skeleton.dart';
-import '../components/nuntium_page_routes.dart';
+import 'package:nuntium_news_app/constants/color_constants.dart';
+import 'package:nuntium_news_app/constants/nuntium_svg_icon_data.dart';
+import 'package:nuntium_news_app/constants/radius_constants.dart';
+import 'package:nuntium_news_app/constants/space_constants.dart';
+import 'package:nuntium_news_app/ui/components/nuntium_page_routes.dart';
+import 'package:nuntium_news_app/ui/components/nuntium_text_styles.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_body_skeleton.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_double_text.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_elevated_button.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_ink_well.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_svg_icon.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_text_field.dart';
+import 'package:nuntium_news_app/ui/screens/forgot_password_screen.dart';
+import 'package:nuntium_news_app/ui/screens/main_screen.dart';
+import 'package:nuntium_news_app/ui/screens/sign_up_screen.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -92,7 +91,7 @@ class _ForgotPassword extends StatelessWidget {
     return NuntiumInkWell(
       onTap: () {
         Navigator.of(context).push(
-          NuntiumPageRoutes.defaultRoute(const ForgotPasswordScreen()),
+          NuntiumPageRoutes.defaultRoute<void>(const ForgotPasswordScreen()),
         );
       },
       child: Text(
@@ -130,9 +129,9 @@ class _SocialMediaButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: const [
+      children: [
         _SignInWithSocialMediaButton(
           signInType: _SocialMediaSignInType.google,
         ),

@@ -1,18 +1,18 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class NuntiumPageRoutes {
   const NuntiumPageRoutes._();
 
-  static Route defaultRoute(Widget page) {
+  static Route<T> defaultRoute<T>(Widget page) {
     return MaterialPageRoute(builder: (context) => page);
   }
 
-  static Route material(Widget page) {
+  static Route<T> material<T>(Widget page) {
     return MaterialPageRoute(builder: (context) => page);
   }
 
-  static Route cupertino(Widget page) {
+  static Route<T> cupertino<T>(Widget page) {
     return CupertinoPageRoute(builder: (context) => page);
   }
 }

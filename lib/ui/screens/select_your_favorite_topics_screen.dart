@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-
-import 'main_screen.dart';
-import '/constants/constants.dart';
-import '/constants/color_constants.dart';
-import '/constants/space_constants.dart';
-import '../components/nuntium_page_routes.dart';
-import '../components/nuntium_text_styles.dart';
-import '../components/widgets/nuntium_container.dart';
-import '../components/widgets/nuntium_elevated_button.dart';
+import 'package:nuntium_news_app/constants/color_constants.dart';
+import 'package:nuntium_news_app/constants/constants.dart';
+import 'package:nuntium_news_app/constants/space_constants.dart';
+import 'package:nuntium_news_app/ui/components/nuntium_page_routes.dart';
+import 'package:nuntium_news_app/ui/components/nuntium_text_styles.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_container.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_elevated_button.dart';
+import 'package:nuntium_news_app/ui/screens/main_screen.dart';
 
 class SelectYourFavoriteTopicsScreen extends StatefulWidget {
   const SelectYourFavoriteTopicsScreen({super.key});
@@ -49,8 +48,8 @@ class SselecYyouFfavoritTtopicSscreenState
                 childAspectRatio: 2.5,
               ),
               itemBuilder: (context, index) {
-                String topic = topics[index];
-                bool isSelected = selectedTopics.contains(topic);
+                final topic = topics[index];
+                final isSelected = selectedTopics.contains(topic);
 
                 return _TopicContainer(
                   text: topic,
@@ -89,10 +88,10 @@ class _TopicContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color containerColor =
+    final containerColor =
         isSelected ? ColorConstants.purplePrimary : ColorConstants.greyLighter;
 
-    final Color textColor =
+    final textColor =
         isSelected ? ColorConstants.white : ColorConstants.greyDarker;
 
     return NuntiumContainer(

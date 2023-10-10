@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-
-import '/constants/color_constants.dart';
+import 'package:nuntium_news_app/constants/color_constants.dart';
 
 class NuntiumInkWell extends StatelessWidget {
   const NuntiumInkWell({
-    super.key,
     required this.onTap,
     required this.child,
+    super.key,
   });
 
   final void Function()? onTap;

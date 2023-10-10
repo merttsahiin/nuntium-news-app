@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
-
-import 'article_screen.dart';
-import '/core/datas.dart';
-import '/core/models/article.dart';
-import '/constants/constants.dart';
-import '/constants/color_constants.dart';
-import '/constants/space_constants.dart';
-import '/constants/radius_constants.dart';
-import '/constants/nuntium_svg_icon_data.dart';
-import '/ui/components/widgets/nuntium_ink_well.dart';
-import '/ui/components/widgets/nuntium_svg_icon.dart';
-import '/ui/components/widgets/nuntium_text_field.dart';
-import '/ui/components/widgets/article_bookmark_button.dart';
-import '/ui/components/widgets/nuntium_elevated_button.dart';
-import '../components/nuntium_page_routes.dart';
-import '../components/nuntium_text_styles.dart';
+import 'package:nuntium_news_app/constants/color_constants.dart';
+import 'package:nuntium_news_app/constants/constants.dart';
+import 'package:nuntium_news_app/constants/nuntium_svg_icon_data.dart';
+import 'package:nuntium_news_app/constants/radius_constants.dart';
+import 'package:nuntium_news_app/constants/space_constants.dart';
+import 'package:nuntium_news_app/core/datas.dart';
+import 'package:nuntium_news_app/core/models/article.dart';
+import 'package:nuntium_news_app/ui/components/nuntium_page_routes.dart';
+import 'package:nuntium_news_app/ui/components/nuntium_text_styles.dart';
+import 'package:nuntium_news_app/ui/components/widgets/article_bookmark_button.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_elevated_button.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_ink_well.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_svg_icon.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_text_field.dart';
+import 'package:nuntium_news_app/ui/screens/article_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -46,8 +45,8 @@ class _TitleSubtitleAndSearchField extends StatelessWidget {
 
   final TextEditingController searchController;
 
-  final String titleText = "Browse";
-  final String subtitleText = "Discover things of this world";
+  static const titleText = "Browse";
+  static const subtitleText = "Discover things of this world";
 
   @override
   Widget build(BuildContext context) {
@@ -102,11 +101,11 @@ class _HorizontalCategorieButtonsState
           horizontal: SpaceConstants.defaultSpace,
         ),
         itemBuilder: (context, index) {
-          Color backgroundColor = selectedCategorieIndex == index
+          final backgroundColor = selectedCategorieIndex == index
               ? ColorConstants.purplePrimary
               : ColorConstants.greyLighter;
 
-          Color foregroundColor = selectedCategorieIndex == index
+          final foregroundColor = selectedCategorieIndex == index
               ? ColorConstants.white
               : ColorConstants.greyPrimary;
 
@@ -164,7 +163,7 @@ class _ArticleContainer extends StatelessWidget {
     return NuntiumInkWell(
       onTap: () {
         Navigator.of(context).push(
-          NuntiumPageRoutes.defaultRoute(ArticleScreen(article: article)),
+          NuntiumPageRoutes.defaultRoute<void>(ArticleScreen(article: article)),
         );
       },
       child: Container(

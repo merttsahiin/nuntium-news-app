@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '/constants/color_constants.dart';
-import '/constants/radius_constants.dart';
-import '/ui/components/widgets/nuntium_ink_well.dart';
+import 'package:nuntium_news_app/constants/color_constants.dart';
+import 'package:nuntium_news_app/constants/radius_constants.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_ink_well.dart';
 
 class NuntiumContainer extends StatelessWidget {
   const NuntiumContainer({
-    super.key,
     required this.child,
+    super.key,
     this.height = 56,
     this.width = double.infinity,
     this.color = ColorConstants.greyLighter,

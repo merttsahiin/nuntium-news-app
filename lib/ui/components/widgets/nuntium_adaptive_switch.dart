@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-
-import '/constants/color_constants.dart';
+import 'package:nuntium_news_app/constants/color_constants.dart';
 
 class NuntiumAdaptiveSwitch extends StatelessWidget {
   const NuntiumAdaptiveSwitch({
-    super.key,
     required this.value,
     required this.onChanged,
+    super.key,
   });
 
   final bool value;

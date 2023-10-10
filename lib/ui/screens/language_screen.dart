@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-
-import '/constants/constants.dart';
-import '/constants/color_constants.dart';
-import '/constants/space_constants.dart';
-import '/constants/nuntium_svg_icon_data.dart';
-import '/ui/components/nuntium_text_styles.dart';
-import '/ui/components/widgets/nuntium_svg_icon.dart';
-import '/ui/components/widgets/nuntium_container.dart';
-import '../components/widgets/nuntium_back_button.dart';
+import 'package:nuntium_news_app/constants/color_constants.dart';
+import 'package:nuntium_news_app/constants/constants.dart';
+import 'package:nuntium_news_app/constants/nuntium_svg_icon_data.dart';
+import 'package:nuntium_news_app/constants/space_constants.dart';
+import 'package:nuntium_news_app/ui/components/nuntium_text_styles.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_back_button.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_container.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_svg_icon.dart';
 
 class LanguageScreen extends StatefulWidget {
   const LanguageScreen({super.key});
@@ -52,7 +51,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
       physics: const BouncingScrollPhysics(),
       padding: const EdgeInsets.all(SpaceConstants.defaultSpace),
       itemBuilder: (context, index) {
-        final String language = supportedLanguages[index];
+        final language = supportedLanguages[index];
 
         return _LanguageButton(
           language: language,
@@ -114,17 +113,17 @@ class _LanguageButton extends StatelessWidget {
   }
 
   Widget buildSeperator() {
-    return isSelected
-        ? const SizedBox(width: SpaceConstants.medium)
-        : const SizedBox();
+    if (!isSelected) return const SizedBox();
+
+    return const SizedBox(width: SpaceConstants.medium);
   }
 
   Widget buildCheckIcon() {
-    return isSelected
-        ? const NuntiumSvgIcon(
-            NuntiumSVGIconData.check,
-            color: ColorConstants.white,
-          )
-        : const SizedBox();
+    if (!isSelected) return const SizedBox();
+
+    return const NuntiumSvgIcon(
+      NuntiumSVGIconData.check,
+      color: ColorConstants.white,
+    );
   }
 }

@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-
-import 'home_screen.dart';
-import 'profile_screen.dart';
-import 'bookmarks_screen.dart';
-import 'categories_screen.dart';
-import '/constants/color_constants.dart';
-import '/constants/radius_constants.dart';
-import '/constants/nuntium_svg_icon_data.dart';
-import '/ui/components/widgets/nuntium_svg_icon.dart';
-import '../components/widgets/nuntium_ink_well.dart';
+import 'package:nuntium_news_app/constants/color_constants.dart';
+import 'package:nuntium_news_app/constants/nuntium_svg_icon_data.dart';
+import 'package:nuntium_news_app/constants/radius_constants.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_ink_well.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_svg_icon.dart';
+import 'package:nuntium_news_app/ui/screens/bookmarks_screen.dart';
+import 'package:nuntium_news_app/ui/screens/categories_screen.dart';
+import 'package:nuntium_news_app/ui/screens/home_screen.dart';
+import 'package:nuntium_news_app/ui/screens/profile_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -20,7 +19,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int activePageIndex = 0;
 
-  final double height = 56.0;
+  final height = 56.0;
   final List<Widget> screens = const [
     HomeScreen(),
     CategoriesScreen(),
@@ -55,7 +54,7 @@ class _NuntiumBottomNavigationBarState
     extends State<_NuntiumBottomNavigationBar> {
   int activePageIndex = 0;
 
-  final double height = 56.0;
+  final height = 56.0;
   final List<String> iconPaths = [
     NuntiumSVGIconData.estate,
     NuntiumSVGIconData.apps,

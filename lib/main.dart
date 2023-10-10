@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:nuntium_news_app/constants/app_constants.dart';
+import 'package:nuntium_news_app/core/providers/bookmarks_provider.dart';
+import 'package:nuntium_news_app/ui/components/nuntium_theme.dart';
+import 'package:nuntium_news_app/ui/components/system_ui_manager.dart';
+import 'package:nuntium_news_app/ui/screens/splash_screen.dart';
 import 'package:provider/provider.dart';
-
-import 'ui/screens/splash_screen.dart';
-import 'ui/components/nuntium_theme.dart';
-import 'ui/components/system_ui_manager.dart';
-import '/constants/app_constants.dart';
-import '/core/providers/bookmarks_provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,12 +14,14 @@ void main() {
     SystemUiManager.setStatusBarLightIconBrightness,
   );
 
-  runApp(MultiProvider(
-    providers: [
-      ChangeNotifierProvider(create: (context) => BookmarksProvider()),
-    ],
-    child: const MyApp(),
-  ));
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => BookmarksProvider()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

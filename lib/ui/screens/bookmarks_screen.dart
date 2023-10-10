@@ -1,31 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:nuntium_news_app/constants/color_constants.dart';
+import 'package:nuntium_news_app/constants/nuntium_svg_icon_data.dart';
+import 'package:nuntium_news_app/constants/radius_constants.dart';
+import 'package:nuntium_news_app/constants/space_constants.dart';
+import 'package:nuntium_news_app/core/models/article.dart';
+import 'package:nuntium_news_app/core/providers/bookmarks_provider.dart';
+import 'package:nuntium_news_app/ui/components/nuntium_page_routes.dart';
+import 'package:nuntium_news_app/ui/components/nuntium_text_styles.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_ink_well.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_svg_icon.dart';
+import 'package:nuntium_news_app/ui/screens/article_screen.dart';
 import 'package:provider/provider.dart';
 
-import 'article_screen.dart';
-import '/core/models/article.dart';
-import '/core/providers/bookmarks_provider.dart';
-import '/constants/color_constants.dart';
-import '/constants/space_constants.dart';
-import '/constants/radius_constants.dart';
-import '/constants/nuntium_svg_icon_data.dart';
-import '/ui/components/widgets/nuntium_ink_well.dart';
-import '/ui/components/widgets/nuntium_svg_icon.dart';
-import '../components/nuntium_page_routes.dart';
-import '../components/nuntium_text_styles.dart';
-
-class BookmarksScreen extends StatefulWidget {
+class BookmarksScreen extends StatelessWidget {
   const BookmarksScreen({super.key});
 
   @override
-  State<BookmarksScreen> createState() => _BookmarksScreenState();
-}
-
-class _BookmarksScreenState extends State<BookmarksScreen> {
-  @override
   Widget build(BuildContext context) {
-    BookmarksProvider bookmarksProvider = context.watch<BookmarksProvider>();
-    List<Article> bookmarks = bookmarksProvider.bookmarks;
-    bool haveBookmark = bookmarks.isNotEmpty;
+    final bookmarksProvider = context.watch<BookmarksProvider>();
+    final bookmarks = bookmarksProvider.bookmarks;
+    final haveBookmark = bookmarks.isNotEmpty;
 
     return Scaffold(
       body: SafeArea(
@@ -40,8 +34,8 @@ class _BookmarksScreenState extends State<BookmarksScreen> {
 class _HeaderTitle extends StatelessWidget {
   const _HeaderTitle();
 
-  final String titleText = "Bookmarks";
-  final String subtitleText = "Saved articles to the library";
+  static const titleText = "Bookmarks";
+  static const subtitleText = "Saved articles to the library";
 
   @override
   Widget build(BuildContext context) {
@@ -98,7 +92,7 @@ class _BookmarkItemContainer extends StatelessWidget {
     return NuntiumInkWell(
       onTap: () {
         Navigator.of(context).push(
-          NuntiumPageRoutes.defaultRoute(ArticleScreen(article: article)),
+          NuntiumPageRoutes.defaultRoute<void>(ArticleScreen(article: article)),
         );
       },
       child: SizedBox(

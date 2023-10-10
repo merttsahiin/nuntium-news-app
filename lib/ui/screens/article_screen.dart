@@ -1,27 +1,26 @@
 import 'package:flutter/material.dart';
-
-import '/core/models/article.dart';
-import '/constants/color_constants.dart';
-import '/constants/space_constants.dart';
-import '/constants/radius_constants.dart';
-import '/constants/nuntium_svg_icon_data.dart';
-import '/ui/components/nuntium_text_styles.dart';
-import '/ui/components/widgets/nuntium_back_button.dart';
-import '/ui/components/widgets/nuntium_elevated_button.dart';
-import '/ui/components/widgets/nuntium_svg_icon_button.dart';
-import '../components/widgets/article_bookmark_button.dart';
+import 'package:nuntium_news_app/constants/color_constants.dart';
+import 'package:nuntium_news_app/constants/nuntium_svg_icon_data.dart';
+import 'package:nuntium_news_app/constants/radius_constants.dart';
+import 'package:nuntium_news_app/constants/space_constants.dart';
+import 'package:nuntium_news_app/core/models/article.dart';
+import 'package:nuntium_news_app/ui/components/nuntium_text_styles.dart';
+import 'package:nuntium_news_app/ui/components/widgets/article_bookmark_button.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_back_button.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_elevated_button.dart';
+import 'package:nuntium_news_app/ui/components/widgets/nuntium_svg_icon_button.dart';
 
 class ArticleScreen extends StatelessWidget {
-  const ArticleScreen({super.key, required this.article});
+  const ArticleScreen({required this.article, super.key});
 
   final Article article;
 
-  final double headerHeight = 384.0;
-  final Radius radius = RadiusConstants.circularLarge;
+  static const headerHeight = 384.0;
+  static const radius = RadiusConstants.circularLarge;
 
   @override
   Widget build(BuildContext context) {
-    final double statusBarHeight = MediaQuery.of(context).viewPadding.top;
+    final statusBarHeight = MediaQuery.of(context).viewPadding.top;
 
     return Scaffold(
       extendBodyBehindAppBar: true,
