@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: AppConstants.appName,
-      theme: NuntiumTheme.theme,
+      theme: AppTheme.theme,
       home: const SplasScreen(),
     );
   }

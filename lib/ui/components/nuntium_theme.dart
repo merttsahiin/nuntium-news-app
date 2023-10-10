@@ -4,8 +4,8 @@ import 'package:nuntium_news_app/core/extensions/color_extensions.dart';
 import 'package:nuntium_news_app/ui/components/system_ui_manager.dart';
 
 @immutable
-final class NuntiumTheme {
-  const NuntiumTheme();
+final class AppTheme {
+  const AppTheme();
 
   static ThemeData theme = ThemeData(
     primarySwatch: ColorConstants.purplePrimary.toMaterialColor,
