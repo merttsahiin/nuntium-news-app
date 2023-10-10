@@ -21,11 +21,9 @@ class ArticleBookmarkButton extends StatelessWidget {
     final bookmarksProvider = context.watch<BookmarksProvider>();
 
     return NuntiumSvgIconButton(
-      onPressed: () {
-        bookmarksProvider.addOrRemoveBookmark(article);
-      },
+      onPressed: () => bookmarksProvider.addOrRemoveBookmark(article),
       iconColor: iconColor,
-      iconPath: bookmarksProvider.isOnList(article)
+      iconPath: bookmarksProvider.articleIsOnList(article)
           ? NuntiumSVGIconData.bookmarkFill
           : NuntiumSVGIconData.bookmark,
     );

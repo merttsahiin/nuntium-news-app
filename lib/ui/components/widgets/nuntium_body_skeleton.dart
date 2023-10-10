@@ -15,9 +15,8 @@ class NuntiumBodySkeleton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //TODO: sizeOf
-    final deviceHeight = MediaQuery.of(context).size.height;
-    final statusBarHeight = MediaQuery.of(context).viewPadding.top;
+    final deviceHeight = MediaQuery.sizeOf(context).height;
+    final statusBarHeight = MediaQuery.viewPaddingOf(context).top;
     final bodyHeight = deviceHeight - statusBarHeight;
 
     return Scaffold(

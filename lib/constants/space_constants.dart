@@ -1,5 +1,8 @@
-class SpaceConstants {
-  const SpaceConstants._();
+import 'package:flutter/material.dart' show immutable;
+
+@immutable
+final class SpaceConstants {
+  const SpaceConstants();
 
   static const defaultSpace = 20.0;
 

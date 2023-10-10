@@ -1,4 +1,4 @@
-const List<String> categories = [
+const categories = <String>[
   "🏈 Sports",
   "⚖️ Politics",
   "🌞 Life",
@@ -13,7 +13,7 @@ const List<String> categories = [
   "⚔️ Middle East",
 ];
 
-const List<String> supportedLanguages = [
+const supportedLanguages = <String>[
   "English",
   "Turkish",
   "German",

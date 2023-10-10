@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:nuntium_news_app/constants/color_constants.dart';
 
-class NuntiumTextStyles {
-  const NuntiumTextStyles._();
+@immutable
+final class NuntiumTextStyles {
+  const NuntiumTextStyles();
 
   static TextStyle get regular16 {
     return const TextStyle(

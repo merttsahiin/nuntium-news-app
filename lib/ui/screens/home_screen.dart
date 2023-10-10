@@ -45,8 +45,8 @@ class _TitleSubtitleAndSearchField extends StatelessWidget {
 
   final TextEditingController searchController;
 
-  static const titleText = "Browse";
-  static const subtitleText = "Discover things of this world";
+  static const _titleText = "Browse";
+  static const _subtitleText = "Discover things of this world";
 
   @override
   Widget build(BuildContext context) {
@@ -56,9 +56,9 @@ class _TitleSubtitleAndSearchField extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(titleText, style: NuntiumTextStyles.semibold24),
+          Text(_titleText, style: NuntiumTextStyles.semibold24),
           const SizedBox(height: SpaceConstants.small),
-          Text(subtitleText, style: NuntiumTextStyles.regular16),
+          Text(_subtitleText, style: NuntiumTextStyles.regular16),
           const SizedBox(height: SpaceConstants.xLarge),
           NuntiumTextField(
             controller: searchController,

@@ -1,5 +1,8 @@
-class AppConstants {
-  const AppConstants._();
+import 'package:flutter/material.dart' show immutable;
 
-  static const String appName = "Nuntium";
+@immutable
+final class AppConstants {
+  const AppConstants();
+
+  static const appName = "Nuntium";
 }

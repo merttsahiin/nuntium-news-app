@@ -15,12 +15,12 @@ class ArticleScreen extends StatelessWidget {
 
   final Article article;
 
-  static const headerHeight = 384.0;
-  static const radius = RadiusConstants.circularLarge;
+  static const _headerHeight = 384.0;
+  static const _radius = RadiusConstants.circularLarge;
 
   @override
   Widget build(BuildContext context) {
-    final statusBarHeight = MediaQuery.of(context).viewPadding.top;
+    final statusBarHeight = MediaQuery.viewPaddingOf(context).top;
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -53,21 +53,21 @@ class ArticleScreen extends StatelessWidget {
       children: [
         _Header(
           article: article,
-          headerHeight: headerHeight,
-          radius: radius,
+          headerHeight: _headerHeight,
+          radius: _radius,
         ),
         ListView(
           physics: const BouncingScrollPhysics(),
           children: [
             // Header'ın gözükebilmesi için
             SizedBox(
-              height: headerHeight -
+              height: _headerHeight -
                   statusBarHeight -
-                  radius.x -
+                  _radius.x -
                   AppBar().preferredSize.height,
             ),
             _ContentContainer(
-              radius: radius,
+              radius: _radius,
               article: article,
             ),
           ],

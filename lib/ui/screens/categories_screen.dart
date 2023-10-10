@@ -8,8 +8,8 @@ import 'package:nuntium_news_app/ui/components/widgets/nuntium_container.dart';
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});
 
-  static const titleText = "Categories";
-  static const subtitleText = "Thousands of articles in each category";
+  static const _titleText = "Categories";
+  static const _subtitleText = "Thousands of articles in each category";
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +19,9 @@ class CategoriesScreen extends StatelessWidget {
           physics: const BouncingScrollPhysics(),
           padding: const EdgeInsets.all(SpaceConstants.defaultSpace),
           children: [
-            Text(titleText, style: NuntiumTextStyles.semibold24),
+            Text(_titleText, style: NuntiumTextStyles.semibold24),
             const SizedBox(height: SpaceConstants.small),
-            Text(subtitleText, style: NuntiumTextStyles.regular16),
+            Text(_subtitleText, style: NuntiumTextStyles.regular16),
             const SizedBox(height: SpaceConstants.xLarge),
             GridView.builder(
               itemCount: categories.length,

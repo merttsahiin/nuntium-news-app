@@ -1,8 +1,10 @@
+import 'package:flutter/material.dart' show immutable;
 import 'package:flutter/services.dart';
 import 'package:nuntium_news_app/constants/color_constants.dart';
 
-class SystemUiManager {
-  const SystemUiManager._();
+@immutable
+final class SystemUiManager {
+  const SystemUiManager();
 
   static const SystemUiOverlayStyle setStatusBarLightIconBrightness =
       SystemUiOverlayStyle(

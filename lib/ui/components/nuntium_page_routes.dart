@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class NuntiumPageRoutes {
-  const NuntiumPageRoutes._();
+@immutable
+final class NuntiumPageRoutes {
+  const NuntiumPageRoutes();
 
   static Route<T> defaultRoute<T>(Widget page) {
     return MaterialPageRoute(builder: (context) => page);

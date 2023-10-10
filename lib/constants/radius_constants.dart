@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-class RadiusConstants {
-  const RadiusConstants._();
+@immutable
+final class RadiusConstants {
+  const RadiusConstants();
 
   static const Radius circularDefault = Radius.circular(12);
   static const Radius circularSmall = Radius.circular(8);

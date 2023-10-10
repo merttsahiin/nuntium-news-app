@@ -1,7 +1,9 @@
+import 'package:flutter/material.dart' show immutable;
 import 'package:nuntium_news_app/core/models/user.dart';
 
-class Article {
-  Article({
+@immutable
+final class Article {
+  const Article({
     required this.title,
     required this.content,
     required this.category,

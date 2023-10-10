@@ -34,8 +34,8 @@ class BookmarksScreen extends StatelessWidget {
 class _HeaderTitle extends StatelessWidget {
   const _HeaderTitle();
 
-  static const titleText = "Bookmarks";
-  static const subtitleText = "Saved articles to the library";
+  static const _titleText = "Bookmarks";
+  static const _subtitleText = "Saved articles to the library";
 
   @override
   Widget build(BuildContext context) {
@@ -43,9 +43,9 @@ class _HeaderTitle extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(titleText, style: NuntiumTextStyles.semibold24),
+        Text(_titleText, style: NuntiumTextStyles.semibold24),
         const SizedBox(height: SpaceConstants.small),
-        Text(subtitleText, style: NuntiumTextStyles.regular16),
+        Text(_subtitleText, style: NuntiumTextStyles.regular16),
         const SizedBox(height: SpaceConstants.xLarge),
       ],
     );

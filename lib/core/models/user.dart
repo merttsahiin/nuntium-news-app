@@ -1,5 +1,8 @@
-class User {
-  User({
+import 'package:flutter/material.dart' show immutable;
+
+@immutable
+final class User {
+  const User({
     required this.name,
     required this.role,
     required this.email,
