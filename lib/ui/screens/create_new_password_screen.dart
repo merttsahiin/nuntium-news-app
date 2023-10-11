@@ -18,8 +18,8 @@ class CreateNewPasswordScreen extends StatefulWidget {
 }
 
 class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
-  TextEditingController newPasswordController = TextEditingController();
-  TextEditingController repeatNewPasswordController = TextEditingController();
+  final newPasswordController = TextEditingController();
+  final repeatNewPasswordController = TextEditingController();
 
   final String titleText = "Create New Password 🔒";
   final String subtitleText =
