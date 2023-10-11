@@ -77,7 +77,7 @@ class _NuntiumBottomNavigationBarState
       child: Row(
         children: List.generate(
           iconPaths.length,
-          (index) => buildItem(index),
+          buildItem,
         ),
       ),
     );
